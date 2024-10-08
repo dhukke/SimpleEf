@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  database:
+    image: postgres:latest
+    container_name: SimpleEf.Database
+    environment:
+      - POSTGRES_DB=simpleefdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
